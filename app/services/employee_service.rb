@@ -1,13 +1,10 @@
-class EmployeesController < ApplicationController
-  # 2.2 GET /companies/:company_id/employees (Listar employees por empresa)
-  def index
+class EmployeeService
+  def get_employees_by_company(company_id)
   end
 
-  # 2.1 POST /companies/:company_id/employees (Criar employee por empresa)
-  def create
+  def create_employee_by_company(company_id, employee_params)
   end
 
-  # 2.3 DELETE /employees/:id
-  def destroy
+  def destroy_employee(employee_id)
   end
 end
