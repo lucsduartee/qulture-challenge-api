@@ -16,5 +16,27 @@ class EmployeeService
       employee = Employee.find(employee_id)
       employee.destroy
     end
+
+    def promote_to_leader(leader_id, employee_id)
+      leader = Employee.find(leader_id)
+      employee = Employee.find(employee_id)
+
+      EmployeePromotion.perform(leader, employee)
+    end
+
+    def get_employee_peers(employee_id)
+      employee = Employee.find(employee_id)
+      Employee.where(manager: employee.manager).where.not(manager_id: nil)
+    end
+
+    def get_deep_subordinates(employee_id)
+      employee = Employee.find(employee_id)
+      first_level_subordinates = employee.subordinates
+      Employee.where(manager_id: first_level_subordinates.pluck(:id))
+    end
+
+    def get_subordinates(manager_id)
+      Employee.find(manager_id).subordinates
+    end
   end
 end

@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_26_212153) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.integer "manager_id"
+    t.bigint "manager_id"
     t.string "email"
     t.string "name"
     t.string "picture"
@@ -29,7 +29,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_26_212153) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_employees_on_company_id"
+    t.index ["manager_id"], name: "index_employees_on_manager_id"
   end
 
   add_foreign_key "employees", "companies"
+  add_foreign_key "employees", "employees", column: "manager_id"
 end
