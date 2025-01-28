@@ -17,6 +17,30 @@ class Api::EmployeesController < ApplicationController
     render json: employee, status: :ok
   end
 
+  def promote
+    promoted = EmployeeService.promote_to_leader(params[:id], params[:employee_id])
+
+    render json: promoted, status: :ok
+  end
+
+  def peers
+    peers = EmployeeService.get_employee_peers(params[:id])
+
+    render json: peers, status: :ok
+  end
+
+  def subordinates
+    subordinates = EmployeeService.get_subordinates(params[:id])
+
+    render json: subordinates, status: :ok
+  end
+
+  def deep_subordinates
+    deep_subordinates = EmployeeService.get_deep_subordinates(params[:id])
+
+    render json: deep_subordinates, status: :ok
+  end
+
   def employee_params
     params.require(:employee).permit(:email, :name, :picture)
   end

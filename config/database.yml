@@ -14,6 +14,10 @@ development:
 test:
   <<: *default
   database: qulture_challenge_api_test
+  username: postgres
+  password: postgres
+  host: db
+  port: 5432
 
 production:
   <<: *default
