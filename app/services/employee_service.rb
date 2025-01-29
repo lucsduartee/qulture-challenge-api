@@ -14,6 +14,7 @@ class EmployeeService
 
     def destroy_employee(employee_id)
       employee = Employee.find(employee_id)
+      reset_subordinates_manager(employee) if employee.subordinates.exists?
       employee.destroy
     end
 
@@ -37,6 +38,12 @@ class EmployeeService
 
     def get_subordinates(manager_id)
       Employee.find(manager_id).subordinates
+    end
+
+    private
+
+    def reset_subordinates_manager(employee)
+      employee.subordinates.update_all(manager_id: nil)
     end
   end
 end
