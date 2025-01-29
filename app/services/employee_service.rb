@@ -27,7 +27,10 @@ class EmployeeService
 
     def get_employee_peers(employee_id)
       employee = Employee.find(employee_id)
-      Employee.where(manager: employee.manager).where.not(manager_id: nil)
+      Employee
+        .where(manager: employee.manager)
+        .where.not(manager_id: nil)
+        .where.not(id: employee_id)
     end
 
     def get_deep_subordinates(employee_id)
