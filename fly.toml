@@ -9,6 +9,9 @@ console_command = '/rails/bin/rails console'
 
 [build]
 
+[deploy]
+command = "rails server -b 0.0.0.0 -p 3000"
+
 [http_service]
   internal_port = 3000
   force_https = true
