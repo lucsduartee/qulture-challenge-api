@@ -50,17 +50,17 @@ Certifique-se de ter os seguintes softwares instalados:
 
 ## Rotas da API
 
-| Método | Endpoint                                | Descrição                               |              Payload                  |
-|--------|-----------------------------------------|-----------------------------------------|---------------------------------------|
-| GET    | /api/companies                          | Lista todas as empresas                 |                                       |
-| POST   | /api/companies                          | Cria uma nova empresa                   |            { "name": " " }            |
-| GET    | /api/companies/:id                      | Mostra uma empresa específica           |                                       |
-| GET    | /api/companies/:company_id/employees    | Lista os funcionários de uma empresa    |                                       |
-| POST   | /api/companies/:company_id/employees    | Cria um novo funcionário para a empresa |{"email": "","name": "","picture":  ""}|
-| DELETE | /api/employees/:id                      | Exclui um funcionário                   |                                       |
-| POST   | /api/employees/:id/promote              | Promove um funcionário                  |       {"employee_id": <number> }      |
-| GET    | /api/employees/:id/peers                | Lista colegas de um funcionário         |                                       |
-| GET    | /api/employees/:id/subordinates         | Lista subordinados de um funcionário    |                                       |
-| GET    | /api/employees/:id/deep_subordinates    | Lista subordinados em todos os níveis   |                                       |
+| Método | Endpoint                                | Descrição                               |              Payload                    |
+|--------|-----------------------------------------|-----------------------------------------|-----------------------------------------|
+| GET    | /api/companies                          | Lista todas as empresas                 |                                         |
+| POST   | /api/companies                          | Cria uma nova empresa                   |            `{ "name": "" }`             |
+| GET    | /api/companies/:id                      | Mostra uma empresa específica           |                                         |
+| GET    | /api/companies/:company_id/employees    | Lista os funcionários de uma empresa    |                                         |
+| POST   | /api/companies/:company_id/employees    | Cria um novo funcionário para a empresa |`{"email": "","name": "","picture":  ""}`|
+| DELETE | /api/employees/:id                      | Exclui um funcionário                   |                                         |
+| POST   | /api/employees/:id/promote              | Promove um funcionário                  |       `{"employee_id": <number> }`      |
+| GET    | /api/employees/:id/peers                | Lista colegas de um funcionário         |                                         |
+| GET    | /api/employees/:id/subordinates         | Lista subordinados de um funcionário    |                                         |
+| GET    | /api/employees/:id/deep_subordinates    | Lista subordinados em todos os níveis   |                                         |
 
 ---
